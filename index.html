@@ -1,64 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Music Streaming Registration</title>
+    <title>Map with Hotspots</title>
 </head>
 
-<body bgcolor="#f4f6f8">
+<frameset cols="25%,75%">
+    
+    <!-- Navigation Frame -->
+    <frame src="nav.html" name="navigation">
 
-<h2 align="center" style="color:#1DB954;">
-Online Music Streaming – User Registration
-</h2>
+    <!-- Display Frame -->
+    <frame src="map.html" name="display">
 
-<form action="submit.html" method="POST" name="musicForm" align="center">
+</frameset>
 
-    <!-- Name -->
-    <label>Name:</label><br>
-    <input type="text"
-           name="user_name"
-           placeholder="Enter your name"
-           required>
-    <br><br>
-
-    <!-- Email -->
-    <label>Email:</label><br>
-    <input type="email"
-           name="email"
-           placeholder="Enter your email"
-           required>
-    <br><br>
-
-    <!-- Preferred Genre (Branch replaced with Genre) -->
-    <label>Preferred Genre:</label><br>
-    <select name="genre" required>
-        <option value="">Select Genre</option>
-        <option>Pop</option>
-        <option>Rock</option>
-        <option>Hip Hop</option>
-        <option>Classical</option>
-    </select>
-    <br><br>
-
-    <!-- Gender -->
-    <label>Gender:</label><br>
-    <input type="radio" name="gender" value="Male" required> Male
-    <input type="radio" name="gender" value="Female" required> Female
-    <br><br>
-
-    <!-- Address -->
-    <label>Address:</label><br>
-    <textarea name="address"
-              rows="4"
-              cols="30"
-              placeholder="Enter your address"
-              required></textarea>
-    <br><br>
-
-    <!-- Buttons -->
-    <input type="submit" value="Register">
-    <input type="reset" value="Reset">
-
-</form>
-
-</body>
 </html>
