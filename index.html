@@ -1,68 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Online Music Streaming Platform</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Music Streaming Registration</title>
 </head>
 
-<body>
+<body bgcolor="#f4f6f8">
 
-<h1>🎵 Online Music Streaming Platform</h1>
+<h2 align="center" style="color:#1DB954;">
+Online Music Streaming – User Registration
+</h2>
 
-<h2>Platform Details</h2>
+<form action="submit.html" method="POST" name="musicForm" align="center">
 
-<ul>
-    <li>Platform Name: Music World</li>
-    <li>Subscription Type: Premium & Free</li>
-    <li>Available Devices: Mobile, PC</li>
-    <li>Audio Quality: HD Streaming</li>
-</ul>
+    <!-- Name -->
+    <label>Name:</label><br>
+    <input type="text"
+           name="user_name"
+           placeholder="Enter your name"
+           required>
+    <br><br>
 
-<h2>How to Use the Platform</h2>
+    <!-- Email -->
+    <label>Email:</label><br>
+    <input type="email"
+           name="email"
+           placeholder="Enter your email"
+           required>
+    <br><br>
 
-<ol>
-    <li>Create an account</li>
-    <li>Login to the platform</li>
-    <li>Select your favorite genre</li>
-    <li>Search and play songs</li>
-</ol>
+    <!-- Preferred Genre (Branch replaced with Genre) -->
+    <label>Preferred Genre:</label><br>
+    <select name="genre" required>
+        <option value="">Select Genre</option>
+        <option>Pop</option>
+        <option>Rock</option>
+        <option>Hip Hop</option>
+        <option>Classical</option>
+    </select>
+    <br><br>
 
-<h2>Top Trending Songs</h2>
+    <!-- Gender -->
+    <label>Gender:</label><br>
+    <input type="radio" name="gender" value="Male" required> Male
+    <input type="radio" name="gender" value="Female" required> Female
+    <br><br>
 
-<table>
-    <tr>
-        <th>Song ID</th>
-        <th>Song Name</th>
-        <th>Artist</th>
-        <th>Genre</th>
-        <th>Duration</th>
-    </tr>
+    <!-- Address -->
+    <label>Address:</label><br>
+    <textarea name="address"
+              rows="4"
+              cols="30"
+              placeholder="Enter your address"
+              required></textarea>
+    <br><br>
 
-    <tr>
-        <td>101</td>
-        <td>Shape of You</td>
-        <td>Ed Sheeran</td>
-        <td>Pop</td>
-        <td>4:20</td>
-    </tr>
+    <!-- Buttons -->
+    <input type="submit" value="Register">
+    <input type="reset" value="Reset">
 
-    <tr>
-        <td>102</td>
-        <td>Believer</td>
-        <td>Imagine Dragons</td>
-        <td>Rock</td>
-        <td>3:24</td>
-    </tr>
-
-    <tr>
-        <td>103</td>
-        <td>Blinding Lights</td>
-        <td>The Weeknd</td>
-        <td>R&B</td>
-        <td>3:22</td>
-    </tr>
-
-</table>
+</form>
 
 </body>
 </html>
