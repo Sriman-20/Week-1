@@ -1,17 +1,88 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Map with Hotspots</title>
+    <title>Registration Form Validation</title>
+
+    <script>
+        function validateForm() {
+
+            var fname = document.getElementById("fname").value;
+            var lname = document.getElementById("lname").value;
+            var password = document.getElementById("password").value;
+            var email = document.getElementById("email").value;
+            var mobile = document.getElementById("mobile").value;
+            var address = document.getElementById("address").value;
+
+            // First Name Validation
+            var namePattern = /^[A-Za-z]{6,}$/;
+            if (!namePattern.test(fname)) {
+                alert("First Name must contain alphabets and minimum 6 characters");
+                return false;
+            }
+
+            // Password Validation
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long");
+                return false;
+            }
+
+            // Email Validation
+            var emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+            if (!emailPattern.test(email)) {
+                alert("Enter valid Email ID (name@domain.com)");
+                return false;
+            }
+
+            // Mobile Validation
+            var mobilePattern = /^[0-9]{10}$/;
+            if (!mobilePattern.test(mobile)) {
+                alert("Mobile number must contain exactly 10 digits");
+                return false;
+            }
+
+            // Last Name Validation
+            if (lname == "") {
+                alert("Last Name should not be empty");
+                return false;
+            }
+
+            // Address Validation
+            if (address == "") {
+                alert("Address should not be empty");
+                return false;
+            }
+
+            alert("Form Validated Successfully!");
+            return true;
+        }
+    </script>
 </head>
 
-<frameset cols="25%,75%">
-    
-    <!-- Navigation Frame -->
-    <frame src="nav.html" name="navigation">
+<body>
+    <h2>Registration Form</h2>
 
-    <!-- Display Frame -->
-    <frame src="map.html" name="display">
+    <form action="success.html" method="post" onsubmit="return validateForm()">
 
-</frameset>
+        First Name:
+        <input type="text" id="fname"><br><br>
 
+        Last Name:
+        <input type="text" id="lname"><br><br>
+
+        Password:
+        <input type="password" id="password"><br><br>
+
+        Email ID:
+        <input type="text" id="email"><br><br>
+
+        Mobile Number:
+        <input type="text" id="mobile"><br><br>
+
+        Address:
+        <textarea id="address"></textarea><br><br>
+
+        <input type="submit" value="Submit">
+
+    </form>
+</body>
 </html>
