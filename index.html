@@ -1,43 +1,88 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Mouse Events</title>
+    <title>Registration Form Validation</title>
 
-<script>
-function mouseOver() {
-    let el = document.getElementById("box");
-    el.style.backgroundColor = "green";
-    el.style.color = "white";
-    document.getElementById("msg").innerHTML = "Mouse Over Event Triggered";
-}
+    <script>
+        function validateForm() {
 
-function mouseOut() {
-    let el = document.getElementById("box");
-    el.style.backgroundColor = "lightgray";
-    el.style.color = "black";
-    document.getElementById("msg").innerHTML = "Mouse Out Event Triggered";
-}
+            var fname = document.getElementById("fname").value;
+            var lname = document.getElementById("lname").value;
+            var password = document.getElementById("password").value;
+            var email = document.getElementById("email").value;
+            var mobile = document.getElementById("mobile").value;
+            var address = document.getElementById("address").value;
 
-function mouseClick() {
-    document.getElementById("msg").innerHTML = "Mouse Click Event Triggered";
-}
-</script>
+            // First Name Validation
+            var namePattern = /^[A-Za-z]{6,}$/;
+            if (!namePattern.test(fname)) {
+                alert("First Name must contain alphabets and minimum 6 characters");
+                return false;
+            }
 
+            // Password Validation
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long");
+                return false;
+            }
+
+            // Email Validation
+            var emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+            if (!emailPattern.test(email)) {
+                alert("Enter valid Email ID (name@domain.com)");
+                return false;
+            }
+
+            // Mobile Validation
+            var mobilePattern = /^[0-9]{10}$/;
+            if (!mobilePattern.test(mobile)) {
+                alert("Mobile number must contain exactly 10 digits");
+                return false;
+            }
+
+            // Last Name Validation
+            if (lname == "") {
+                alert("Last Name should not be empty");
+                return false;
+            }
+
+            // Address Validation
+            if (address == "") {
+                alert("Address should not be empty");
+                return false;
+            }
+
+            alert("Form Validated Successfully!");
+            return true;
+        }
+    </script>
 </head>
 
 <body>
+    <h2>Registration Form</h2>
 
-<h2>Mouse Events Demo</h2>
+    <form action="success.html" method="post" onsubmit="return validateForm()">
 
-<div id="box"
-     onmouseover="mouseOver()"
-     onmouseout="mouseOut()"
-     onclick="mouseClick()"
-     style="width:200px; padding:20px; background:lightgray; text-align:center; cursor:pointer;">
-     Move Mouse Here
-</div>
+        First Name:
+        <input type="text" id="fname"><br><br>
 
-<p id="msg"></p>
+        Last Name:
+        <input type="text" id="lname"><br><br>
 
+        Password:
+        <input type="password" id="password"><br><br>
+
+        Email ID:
+        <input type="text" id="email"><br><br>
+
+        Mobile Number:
+        <input type="text" id="mobile"><br><br>
+
+        Address:
+        <textarea id="address"></textarea><br><br>
+
+        <input type="submit" value="Submit">
+
+    </form>
 </body>
 </html>
